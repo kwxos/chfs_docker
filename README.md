@@ -1,4 +1,4 @@
-### arm平台启动命令 
+### arm平台启动命令 (斐讯N1盒子)
 ``` shell
 docker run --name chfs  --restart=always  -d -it -p 9999:8080 -v /data/docker/chfs_conf:/config -v /data/docker/chfs_data:/data registry.cn-chengdu.aliyuncs.com/7104475/chfs-arm:v1.0
 
