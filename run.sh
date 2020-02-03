@@ -18,7 +18,7 @@ image.preview=true
 session.timeout=3600
 EOF
 }
-[  -f /config/chfs.ini] || _conf
+[  -f /config/chfs.ini ] || _conf
 chmod +x /app/chfs
 /app/chfs --file=/config/chfs.ini
 
