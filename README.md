@@ -9,3 +9,5 @@ admin 123456
 vi /data/docker/chfs_conf:/config 
 重启 
 docker restart chfs
+
+![QQ截图20200204011737.png](https://i.loli.net/2020/02/04/HQ85Rt4WMOiDkxJ.png)
