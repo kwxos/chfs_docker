@@ -20,7 +20,10 @@ vi /data/docker/chfs_conf:/config
 ``` shell
 docker restart chfs
 ```
+### 访问地址
 
+**[http://IP:9999](http://IP:9999)**
 
 ### 实例
 ![QQ截图20200204011737.png](https://i.loli.net/2020/02/04/HQ85Rt4WMOiDkxJ.png)
+
