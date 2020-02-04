@@ -14,7 +14,7 @@ admin 123456
 ```
 ### 修改账号密码 
 ``` shell
-vi /data/docker/chfs_conf:/config 
+vi /data/docker/chfs_conf/chfs.ini
 ```
 ### 重启生效
 ``` shell
