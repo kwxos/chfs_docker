@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm-chfs-configfiles
+data:
+  key-chfs-conf: |
+    external_domain_name xxxxxx
+    external_domain_name xxxxxx
+  key-chfs-conf2: "
+    \rport=8080
+    \r\n\rrule=admin:123456:RWD
+    \r\n\rpath=/data
+    \r\n\rrule=::r
+    \r\n\rrule=root:admin:RWD
+    \r\n\rlog=/var/log/
+    \r\n\rhtml.title=CHFSHARE
+    \r\n\rimage.preview=true
+    \r\n\rsession.timeout=3600"

@@ -1,0 +1,41 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: chfs
+spec:
+  selector:
+    matchLabels:
+      app: chfs
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: chfs
+    spec:
+     containers:
+       - name: chfs
+         image: registry.cn-chengdu.aliyuncs.com/7104475/chfs-amd:v1.0
+         imagePullPolicy: IfNotPresent
+         ports:
+           - containerPort: 8080
+             name: http-chfs
+           - containerPort: 8082
+             name: tcp-chfs
+        #  command: ["sleep","9999"]
+         volumeMounts:
+            - name: pvc-chfs-volume
+              mountPath: "/data"
+            - name: cm-chfs-configfiles
+              mountPath: "/config"
+     volumes:
+     - name: pvc-chfs-volume
+       persistentVolumeClaim:
+         claimName: chfs-data
+     - name: cm-chfs-configfiles
+       configMap:
+         name: cm-chfs-configfiles
+         items:
+         - key: key-chfs-conf2
+           path: chfs.ini
+    #  nodeSelector:
+    #   chfs-app-gpu: "true"
