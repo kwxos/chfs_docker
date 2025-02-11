@@ -30,7 +30,7 @@ if [ ! -f /app/chfs ]; then
         
         # 解压下载的文件
         unzip /app/$FILENAME -d /app/chfs
-        
+        chmod a+x chfs
         echo "解压完成，安装已完成"
     else
         echo "文件 $FILENAME 已经存在，跳过下载"
