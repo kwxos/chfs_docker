@@ -29,8 +29,8 @@ if [ ! -f /app/chfs ]; then
         wget -O /app/$FILENAME $DOWNLOAD_URL
         
         # 解压下载的文件
-        unzip /app/$FILENAME -d /app/chfs
-        chmod a+x /app/chfs
+        unzip /app/$FILENAME
+        chmod a+x /app/chfs-linux-arm64-3.1
         echo "解压完成，安装已完成"
     else
         echo "文件 $FILENAME 已经存在，跳过下载"
