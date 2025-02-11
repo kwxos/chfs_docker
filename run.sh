@@ -30,7 +30,7 @@ if [ ! -f /app/chfs ]; then
         
         # 解压下载的文件
         unzip /app/$FILENAME -d /app/chfs
-        chmod a+x chfs
+        chmod a+x /app/chfs
         echo "解压完成，安装已完成"
     else
         echo "文件 $FILENAME 已经存在，跳过下载"
@@ -53,7 +53,7 @@ EOF
 [  -f /config/chfs.ini ] || _conf
 chmod +x /app/chfs
 /app/chfs --file=/config/chfs.ini
-
+tail -f /dev/null
 
 #
 
