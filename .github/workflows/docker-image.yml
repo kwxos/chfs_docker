@@ -34,5 +34,5 @@ jobs:
         uses: docker/build-push-action@v4.1.1
         with:
           push: true
-          platforms: linux/aarch64
+          platforms: linux/arm64
           tags: ${{ env.DOCKERHUB_REPOSITORY }}
