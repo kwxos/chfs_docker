@@ -19,12 +19,24 @@ if [ ! -f /app/chfs ]; then
         echo "Unsupported architecture: $ARCH"
         exit 1
     fi
-    # 下载并解压对应的压缩包
-    wget $DOWNLOAD_URL
-    unzip $(basename $DOWNLOAD_URL)
     
-    echo "解压完成，安装已完成"
+    # 获取下载的文件名
+    FILENAME=$(basename $DOWNLOAD_URL)
+    
+    # 检查文件是否已经存在
+    if [ ! -f "/app/$FILENAME" ]; then
+        # 下载文件
+        wget -O /app/$FILENAME $DOWNLOAD_URL
+        
+        # 解压下载的文件
+        unzip /app/$FILENAME -d /app/chfs
+        
+        echo "解压完成，安装已完成"
+    else
+        echo "文件 $FILENAME 已经存在，跳过下载"
+    fi
 fi
+
 _conf  () {
 cat  > /config/chfs.ini  <<  'EOF'
 port=8080
