@@ -1,9 +1,9 @@
 #!/bin/bash
 #常用命令
 cd  /app;
-[ -f /app/chfs ]|| {
-cat /proc/cpuinfo | grep "model name"| egrep  -i  arm && unzip chfs-linux-arm64*
-cat /proc/cpuinfo | grep "model name"| egrep  -i  arm || unzip chfs-linux-amd64*
+[ -f /app/chfs ] || {
+    # 解压所有以 chfs-linux- 开头的压缩包
+    unzip chfs-linux-*
 }
 _conf  () {
 cat  > /config/chfs.ini  <<  'EOF'
